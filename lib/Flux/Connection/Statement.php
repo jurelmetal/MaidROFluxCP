@@ -23,7 +23,7 @@ class Flux_Connection_Statement {
 			$info = $this->stmt->errorInfo();
 			self::$errorLog->puts('[SQLSTATE=%s] Err %s: %s', $info[0], $info[1], $info[2]);
 			if (Flux::config('DebugMode')) {
-				$message = sprintf('MySQL error (SQLSTATE: %s, ERROR: %s): %s', $info[0], $info[1], $info[2]);
+				$message = sprintf('MySQL error (SQLSTATE: %s, ERROR: %s): %s\n %s', $info[0], $info[1], $info[2]);
 				throw new Flux_Error($message);
 			}
 		}

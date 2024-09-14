@@ -327,7 +327,7 @@ class Flux_Template {
 					$val = urldecode($val);
 					
 					if ($key != 'module' && $key != 'action') {
-						$this->urlWithQS .= sprintf('&%s=%s', urlencode($key), urlencode($val));
+						$this->urlWithQS .= sprintf('&%s=%s', urlencode($key ?? ""), urlencode($val ?? ""));
 					}
 				}
 			}
@@ -644,7 +644,7 @@ class Flux_Template {
 		if (count($params)) {
 			$queryString .= Flux::config('UseCleanUrls') ? '?' : '&';
 			foreach ($params as $param => $value) {
-				$queryString .= sprintf('%s=%s&', $param, urlencode($value));
+				$queryString .= sprintf('%s=%s&', $param, urlencode($value ?? ""));
 			}
 			$queryString = rtrim($queryString, '&');
 		}

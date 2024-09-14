@@ -2,16 +2,16 @@
 // This is the application configuration file. All values have been set to
 // the default, and should be changed as needed.
 return array(
-	'ServerAddress'        => 'localhost',              // This value is the hostname:port under which Flux runs. (e.g., example.com or example.com:80)
+	'ServerAddress'        => 'cp.maid-ro.com',              // This value is the hostname:port under which Flux runs. (e.g., example.com or example.com:80)
 	'BaseURI'              => '',                       // The base URI is the base web root on which your application lies.
-	'InstallerPassword'    => 'secretpassword',         // Installer/updater password.
+	'InstallerPassword'    => 'r243rajgjgjajaajfd45trgf',         // Installer/updater password.
 	'RequireOwnership'     => true,                     // Require the executing user to be owner of the FLUX_ROOT/data/ directory tree? (Better for security)
 	                                                    // WARNING: This will be mostly IGNORED on non-POSIX-compliant OSes (e.g. Windows).
 	'DefaultLoginGroup'    => null,
 	'DefaultCharMapServer' => null,
 	'DefaultLanguage'      => 'en_us',                  // Specify the default control panel language (see FLUX_ROOT/lang/ directory for available languages.)
 	'SiteTitle'            => 'Flux Control Panel',     // This value is only used if the theme decides to use it.
-	'ThemeName'            => array('default', 'emphaino'), // Names of the themes you would like to use.  Themes are in FLUX_ROOT/themes. First theme listed will be default theme.
+	'ThemeName'            => array('maidro', 'default', 'emphaino'), // Names of the themes you would like to use.  Themes are in FLUX_ROOT/themes. First theme listed will be default theme.
 	'ScriptTimeLimit'      => 0,                        // Script execution time limit. Specifies (in seconds) how long a page should run before timing out. (0 means forever)
 	'MissingEmblemBMP'     => 'empty.bmp',              //
 	'ItemIconNameFormat'   => '%d.png',                 // The filename format for item icons (defaults to {itemid}.png).
@@ -56,15 +56,15 @@ return array(
 	'RequireEmailConfirm'  => false,                    // Require e-mail confirmation during registration.
 	'RequireChangeConfirm' => false,                    // Require confirmation when changing e-mail addresses.
 	'EmailConfirmExpire'   => 48,                       // E-mail confirmations expire hours. Unconfirmed accounts will expire after this period of time.
-	'MailerFromAddress'    => 'noreply@localhost',      // The e-mail address displayed in the From field.
-	'MailerFromName'       => 'MailerName',             // The name displayed with the From e-mail address.
-	'MailerUseSMTP'        => false,                    // Whether or not to use a separate SMTP server for sending mail.
-	'MailerSMTPUseSSL'     => false,                    // Whether or not mailer should connect using SSL (yes for GMail).
+	'MailerFromAddress'    => 'cp@maid-ro.com',    // The e-mail address displayed in the From field.
+	'MailerFromName'       => 'Maid-RO Control Panel',  // The name displayed with the From e-mail address.
+	'MailerUseSMTP'        => true,                    // Whether or not to use a separate SMTP server for sending mail.
+	'MailerSMTPUseSSL'     => true,                    // Whether or not mailer should connect using SSL (yes for GMail).
 	'MailerSMTPUseTLS'     => false,                    // Same as above SSL setting, but for TLS.  This setting will override the SSL setting.
-	'MailerSMTPPort'       => null,                     // When MailerUseSMTP is true: SMTP server port (mailer will default to 25).
-	'MailerSMTPHosts'      => null,                     // When MailerUseSMTP is true: A string host or array of hosts (e.g., 'host1' or array('host1', 'backuphost')).
-	'MailerSMTPUsername'   => null,                     // When MailerUseSMTP is true: Authorized username for SMTP server.
-	'MailerSMTPPassword'   => null,                     // When MailerUseSMTP is true: Authorized password for SMTP server (for above user).
+	'MailerSMTPPort'       => 465,                     // When MailerUseSMTP is true: SMTP server port (mailer will default to 25).
+	'MailerSMTPHosts'      => 'smtp.sendgrid.net',                     // When MailerUseSMTP is true: A string host or array of hosts (e.g., 'host1' or array('host1', 'backuphost')).
+	'MailerSMTPUsername'   => 'apikey',                    // When MailerUseSMTP is true: Authorized username for SMTP server.
+	'MailerSMTPPassword'   => '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',                     // When MailerUseSMTP is true: Authorized password for SMTP server (for above user).
 	'ServerStatusCache'    => 2,                        // Store a cached server status and refresh every X minutes.  Default: 2 minutes (value is measured in minutes).
 	'ServerStatusTimeout'  => 2,                        // For each server, spend X amount of seconds to determine whether it's up or not.
 	'SessionKey'           => 'fluxSessionData',        // Shouldn't be changed, just specifies the session key to be used for session data.
@@ -144,7 +144,7 @@ return array(
 	'ShopImageExtensions'  => array(                    // These are the image extensions allowed for uploading in the item shop.
 		'png', 'jpg', 'gif', 'bmp', 'jpeg'
 	),
-	'NoResetPassGroupLevel'  => AccountLevel::LOWGM,    // Minimum group level of account to prevent password reset using control panel.
+	'NoResetPassGroupLevel'  => AccountLevel::NOONE,    // Minimum group level of account to prevent password reset using control panel.
 
 	'CharRankingLimit'       => 20,                     //
 	'GuildRankingLimit'      => 20,                     //
